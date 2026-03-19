@@ -1,4 +1,7 @@
 # 📊 Churn Prediction Analysis
+
+
+
 ## ✨ Introduction
 
 This project focuses on analyzing customer churn in an e-commerce setting. The primary goal is to understand the factors contributing to customer churn and build a predictive model to identify customers at risk. By understanding these dynamics, targeted strategies can be developed to improve customer retention.
@@ -93,7 +96,7 @@ Focused analysis on features identified as important by an initial Random Forest
 
 *   **Data Preparation**: Only churned customers (`churn == 1`) were selected. Categorical features were one-hot encoded, and all features were scaled using `MinMaxScaler`. Missing values were imputed using the median strategy.
 *   **Dimensionality Reduction**: PCA was applied to reduce dimensionality, with 3 components explaining approximately 39% of the variance. This suggested the data is high-dimensional and PCA is mainly for visualization.
-*   **K-Means Clustering**: The Elbow method was used to determine the optimal number of clusters (`k`). The WCSS curve did not show a clear elbow, indicating that the cluster structure is not strongly separated in the current feature space. Further analysis (e.g., using more domain-specific features) would be needed to derive meaningful clusters.
+*   **K-Means Clustering**: The Elbow method was used to determine the optimal number of clusters (`k`). However, the WCSS curve did not show a clear “knee” point, which is usually indicative of an optimal `k`. This suggests that the churned user data, when reduced to these principal components, does not form distinct, well-separated clusters, or that the current feature space is insufficient to reveal such structure. Therefore, an optimal `k` could not be definitively chosen using this method, and further segmentation efforts might require additional features or alternative clustering approaches.
 
 ## 💡 Key Findings & Insights
 
@@ -131,20 +134,6 @@ This model is highly effective at identifying churn-prone customers, making it a
 *   **Seaborn** (Statistical Data Visualization)
 *   **Scikit-learn** (Machine Learning Library - for models, preprocessing, and metrics)
 
-## 🏃‍♂️ How to Run
-
-1.  **Clone the repository**:
-    ```bash
-    git clone <repository_url>
-    cd <repository_name>
-    ```
-2.  **Install dependencies** (if in a virtual environment):
-    ```bash
-    pip install -r requirements.txt
-    ```
-    (Note: a `requirements.txt` would typically list `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`)
-3.  **Open the Jupyter Notebook**: You can open the `churn_prediction_analysis.ipynb` (or similar name) notebook in Jupyter Lab or VS Code.
-4.  **Run the cells**: Execute all cells in the notebook sequentially to reproduce the analysis and model training.
 
 ## ✅ Conclusion
 
