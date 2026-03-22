@@ -1,4 +1,4 @@
-# 📊 Churn Prediction Analysis
+# 📊 Customer Churn Analysis & Retention Strategy in E-commerce | Python
 
 
 
